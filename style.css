@@ -768,7 +768,7 @@ a {
   width: 100%;
   background: white;
   padding: 20px;
-
+  container-type: inline-size;
   /* 詳細テキストを隠すために高さを制限 */
   height: 38%;
   transition: height 0.4s ease;
@@ -812,7 +812,7 @@ a {
   text-align: center;
 }
 .reason-card-text p {
-  font-size: clamp(10px, 7vw, 20px);
+  font-size: clamp(15px, 5cqw, 23px);
   line-height: 1.8;
   color: #666;
   opacity: 0;
@@ -864,10 +864,6 @@ a {
 
   .reason-card {
     padding: 32px 24px;
-  }
-  .reason-card-text p {
-    font-size: 14px;
-    line-height: 1.5;
   }
 }
 
@@ -1313,7 +1309,7 @@ a {
 }
 
 .cta-title {
-  font-size: clamp(30px, 7vw, 56px);
+  font-size: clamp(24px, 7vw, 56px);
   font-weight: 600;
   color: var(--white);
   text-shadow: 0 10px 10px rgba(253, 251, 251, 0.7);
