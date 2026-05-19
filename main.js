@@ -14,6 +14,12 @@ navLinks.forEach(function (link) {
     nav.classList.remove("is-active");
   });
 });
+nav.addEventListener("click", function (event) {
+  if (event.target === nav) {
+    hamburger.classList.remove("is-active");
+    nav.classList.remove("is-active");
+  }
+});
 
 // ===========================
 // FAQ アコーディオン
@@ -71,6 +77,30 @@ document.querySelectorAll('a[href^="#"]').forEach((a) => {
       target.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   });
+});
+
+// ===========================
+// ４つの理由
+// ===========================
+const reasonCards = document.querySelectorAll(".reason-card");
+
+const showCardDetails = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("active");
+      } else {
+        entry.target.classList.remove("active");
+      }
+    });
+  },
+  {
+    rootMargin: "-20% 0px -20% 0px",
+  },
+);
+
+reasonCards.forEach((card) => {
+  showCardDetails.observe(card);
 });
 
 // ===========================
