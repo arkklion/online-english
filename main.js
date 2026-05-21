@@ -22,24 +22,19 @@ nav.addEventListener("click", function (event) {
 });
 
 // ===========================
-// FAQ アコーディオン
+// FAQ 
 // ===========================
 function toggleFaq(btn) {
   const item = btn.closest(".faq-item");
   const answer = item.querySelector(".faq-answer");
-  const icon = btn.querySelector(".faq-icon");
   const isOpen = answer.classList.contains("open");
 
-  // 全部閉じる
-  document
-    .querySelectorAll(".faq-answer")
-    .forEach((a) => a.classList.remove("open"));
-  document.querySelectorAll(".faq-icon").forEach((i) => (i.textContent = "∨"));
+  document.querySelectorAll(".faq-answer").forEach((a) => a.classList.remove("open"));
+  document.querySelectorAll(".faq-item").forEach((i) => i.classList.remove("open")); // 🎯 ここを追加！
 
-  // クリックしたものだけ開く（既に開いていたら閉じる）
   if (!isOpen) {
     answer.classList.add("open");
-    icon.textContent = "∧";
+    item.classList.add("open"); // 🎯 親の箱（.faq-item）にも open クラスをつける！
   }
 }
 
