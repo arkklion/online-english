@@ -990,7 +990,6 @@ a {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   column-gap: 2.5vw;
-  border: red 1px solid;
 }
 
 .flow-step {
@@ -1062,6 +1061,10 @@ a {
     border-radius: 2rem 2rem 10rem 10rem;
     padding: 5rem 2.5rem 4rem;
     margin-bottom: 2.8rem;
+  }
+
+  .flow-step:last-child {
+    margin-bottom: 0;
   }
 
   .flow-step-num,
